@@ -38,10 +38,18 @@
             </fieldset>
             <fieldset>
                 <label for="journalEntry">Journal Entry</label>
-                <input type="text-area">
+                <textarea id="journalEntry" name="journalEntry"></textarea>
             </fieldset>
-            <div>mood dropdown</div>
-            <div>Record Journal Entry</div>
+            <fieldset>
+                <label for="moodDropdown">Mood for the day</label>
+                <select name="moods" id="mood-select">
+                    <option value="">--Please choose an option--</option>
+                    <option value="happy">Happy</option>
+                    <option value="fine">Fine</option>
+                    <option value="sad">Sad</option>
+                </select>
+            </fieldset>
+            <button>Record Journal Entry</button>
         </form>
     </main>
 
