@@ -1,5 +1,6 @@
 <!DOCTYPE html>
 <html lang="en">
+
 <head>
     <meta charset="UTF-8">
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
@@ -7,6 +8,7 @@
     <title>My Daily Journal</title>
     <link rel="stylesheet" href="styles/main.css">
 </head>
+
 <body>
     <header>
         <h1>My Daily Journal</h1>
@@ -14,47 +16,50 @@
     </header>
 
     <main>
-        <aside>
-            <div class="entry-container">
-                <div></div>
-                <div></div>
-                <div></div>
-            </div>
-            <div class="entry-container-recent">
-                <div>most recent entry</div>
-                <div>second most recent entry</div>
-            </div>
-        </aside>
-
         <h2>Daily Journal</h2>
-        <form action="">
-            <fieldset>
-                <label for="journalDate">Date of entry</label>
-                <input type="date" name="journalDate" id="journalDate">
-            </fieldset>
-            <fieldset>
-                <label for="journalConcept">Concepts covered</label>
-                <input type="text">
-            </fieldset>
-            <fieldset>
-                <label for="journalEntry">Journal Entry</label>
-                <textarea id="journalEntry" name="journalEntry"></textarea>
-            </fieldset>
-            <fieldset>
-                <label for="moodDropdown">Mood for the day</label>
-                <select name="moods" id="mood-select">
-                    <option value="">--Please choose an option--</option>
-                    <option value="happy">Happy</option>
-                    <option value="fine">Fine</option>
-                    <option value="sad">Sad</option>
-                </select>
-            </fieldset>
-            <button>Record Journal Entry</button>
-        </form>
+        <div class="flexContainer">
+            <aside>
+                <div id="entryLog">
+                    <div></div>
+                    <div></div>
+                    <div></div>
+                </div>
+                <div class="entry-container-recent">
+                    <div>most recent entry</div>
+                    <div>second most recent entry</div>
+                </div>
+            </aside>
+
+            <form action="">
+                <fieldset>
+                    <label for="journalDate">Date of entry</label>
+                    <input type="date" name="journalDate" id="journalDate">
+                </fieldset>
+                <fieldset>
+                    <label for="journalConcept">Concepts covered</label>
+                    <input type="text">
+                </fieldset>
+                <fieldset>
+                    <label for="journalEntry">Journal Entry</label>
+                    <textarea id="journalEntry" name="journalEntry"></textarea>
+                </fieldset>
+                <fieldset>
+                    <label for="moodDropdown">Mood for the day</label>
+                    <select name="moods" id="mood-select">
+                        <option value="">--Please choose an option--</option>
+                        <option value="happy">Happy</option>
+                        <option value="fine">Fine</option>
+                        <option value="sad">Sad</option>
+                    </select>
+                </fieldset>
+                <button>Record Journal Entry</button>
+            </form>
+        </div>
     </main>
 
     <footer>&copy;2021 Brandon Vinson <a href="https://github.com/bvinson23">github.com/bvinson23</a></footer>
 
     <script type="module" src="./scripts/main.js"></script>
 </body>
+
 </html>
