@@ -1,4 +1,17 @@
 fieldset {
     display: flex;
     flex-direction: column;
+    width: 75%;
+}
+
+input {
+    width: 25%;
+}
+
+textarea {
+    width: 25%;
+}
+
+select {
+    width: fit-content;
 }
