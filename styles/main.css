@@ -1,4 +1,29 @@
 fieldset {
     display: flex;
     flex-direction: column;
+    height: fill;
+}
+
+input {
+    width: 25%;
+}
+
+textarea {
+    width: 25%;
+}
+
+select {
+    width: fit-content;
+}
+.flexContainer {
+    display: flex;
+}
+
+aside {
+    max-width: 33%;
+    align-self: flex-start;
+}
+
+form {
+    flex-grow: 2;
 }
