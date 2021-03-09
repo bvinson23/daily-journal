@@ -17,8 +17,14 @@ startDailyJournal();
 const applicationElement = document.querySelector(".dailyjournal");
 
 applicationElement.addEventListener("click", event => {
-    if(event.target.id("#entry--${entry.id}")){
+    if (event.target.id.startsWith("entry")) {
         console.log("post clicked", event.target.id.split("--"))
         console.log("the id is", event.target.id.split("--")[1])
     }
 })
+
+// applicationElement.addEventListener("click", event => {
+//     if(event.target.id === "dailyjournal"){
+//         console.log("You clicked!");
+//     }
+// })
