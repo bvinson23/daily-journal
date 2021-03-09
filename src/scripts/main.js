@@ -1,3 +1,15 @@
-import { EntryListComponent } from "./JournalEntryList.js"
+import { EntryList } from "./JournalEntryList.js"
+import { getEntries } from "./data/Datamanager.js"
 
-EntryListComponent()
+const showEntryList = () => {
+    const entryElement = document.querySelector("#entryLog");
+    getEntries().then((allEntries) => {
+        entryElement.innerHTML = EntryList(allEntries);
+    })
+}
+
+const startDailyJournal = () => {
+    showEntryList();
+}
+
+startDailyJournal();

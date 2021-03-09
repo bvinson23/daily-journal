@@ -1,25 +1,32 @@
 {
-    "posts": [
-        {
-            "id": 1,
-            "date": "07/24/2025",
-            "concept": "HTML & CSS",
-            "entry": "We talked about HTML components and how to make grid layouts with Flexbox in CSS.",
-            "mood": "Ok"
-        },
-        {
-            "id": 2,
-            "date": "07/26/2025",
-            "concept": "Complex Flexbox",
-            "entry": "I tried to have an element in my Flexbox layout also be another Flexbox layout. It hurt my brain. I hate Steve.",
-            "mood": "Sad"
-        },
-        {
-            "id": 3,
-            "date": "07/27/2025",
-            "concept": "JavaScript",
-            "entry": "Today we started talking about scripts. It was a nightmare. I understand how loops work in theory but not in practice.",
-            "mood": "Sad"
-        }
-    ]
+  "posts": [
+    {
+      "id": 1,
+      "date": "07/24/2025",
+      "concept": "HTML & CSS",
+      "entry": "We talked about HTML components and how to make grid layouts with Flexbox in CSS.",
+      "mood": "Ok"
+    },
+    {
+      "id": 2,
+      "date": "07/26/2025",
+      "concept": "Complex Flexbox",
+      "entry": "I tried to have an element in my Flexbox layout also be another Flexbox layout. It hurt my brain. I hate Steve.",
+      "mood": "Sad"
+    },
+    {
+      "id": 3,
+      "date": "07/27/2025",
+      "concept": "JavaScript",
+      "entry": "Today we started talking about scripts. It was a nightmare. I understand how loops work in theory but not in practice.",
+      "mood": "Sad"
+    },
+    {
+      "date": "03/09/2021",
+      "concept": "Building json servers",
+      "entry": "We discussed what a json server was and how to build one to act as a faux server for your data as you develop a site or app.",
+      "mood": "Happy",
+      "id": 4
+    }
+  ]
 }
