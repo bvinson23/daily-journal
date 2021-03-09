@@ -20,12 +20,10 @@ select {
 }
 
 aside {
-    border: 1px red solid;
     max-width: 33%;
     align-self: flex-start;
 }
 
 form {
-    border: 1px red solid;
     flex-grow: 2;
 }
