@@ -22,7 +22,7 @@ select {
 }
 
 aside {
-    max-width: 33%;
+    max-width: 50%;
     align-self: flex-start;
 }
 
