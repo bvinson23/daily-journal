@@ -1,7 +1,7 @@
 
 // Purpose: To render a single journal entry as an HTML representation of the data
 
-export const JournalEntryComponent = (entry) => {
+export const JournalEntry = (entry) => {
     return `
         <section id="entry--${entry.id}" class="journalEntry">
             <h3>${entry.concept}</h3>
