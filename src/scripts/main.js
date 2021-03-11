@@ -21,8 +21,8 @@ applicationElement.addEventListener("click", event => {
 })
 
 applicationElement.addEventListener("click", event => {
-    event.preventDefault();
     if (event.target.id === "newPost__submit") {
+        event.preventDefault();
         //collect the input values into an object to post to the DB
         const date = document.querySelector("input[name='journalDate']").value
         const concept = document.querySelector("input[name='concept']").value
