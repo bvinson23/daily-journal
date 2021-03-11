@@ -6,7 +6,7 @@ import { NavBar } from "./NavBar.js"
 const showEntryList = () => {
     const entryElement = document.querySelector("#entryLog");
     getEntries().then((allEntries) => {
-        entryElement.innerHTML = EntryList(allEntries);
+        entryElement.innerHTML = EntryList(allEntries.reverse());
     })
 }
 
