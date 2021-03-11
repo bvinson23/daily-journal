@@ -1,13 +1,13 @@
 export const PostEntry = () => {
     return `
-    <form action="">
+    <form id="newEntry">
                 <fieldset>
                     <label for="journalDate">Date of entry</label>
-                    <input type="date" name="journalDate" id="journalDate">
+                    <input type="date" name="journalDate" id="journalDate" placeholder="mm-dd-yyyy">
                 </fieldset>
                 <fieldset>
                     <label for="journalConcept">Concepts covered</label>
-                    <input type="text">
+                    <input type="text" name="concept">
                 </fieldset>
                 <fieldset>
                     <label for="journalEntry">Journal Entry</label>
@@ -22,7 +22,7 @@ export const PostEntry = () => {
                         <option value="sad">Sad</option>
                     </select>
                 </fieldset>
-                <button>Record Journal Entry</button>
+                <button id="newPost__submit">Record Journal Entry</button>
             </form>
     `
 }

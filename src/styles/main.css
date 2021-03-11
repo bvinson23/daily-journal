@@ -1,3 +1,6 @@
+@import "navigation.css";
+@import "footer.css";
+
 fieldset {
     display: flex;
     flex-direction: column;
@@ -5,13 +8,15 @@ fieldset {
 }
 
 input {
-    width: 25%;
+    width: 30%;
+    background-color: #A4A4C4;
 }
 
 textarea {
     width: 50%;
     resize: none;
     height: 100px;
+    background-color: #A4A4C4;
 }
 
 select {
@@ -19,13 +24,34 @@ select {
 }
 .flexContainer {
     display: flex;
+    margin-bottom: 5em;
 }
 
 aside {
     max-width: 50%;
     align-self: flex-start;
+    margin-left: 2em;
 }
 
 form {
     flex-grow: 2;
+    background-color: #8080AA;
+    width: 500px;
+    color: black;
+}
+
+body {
+    background-color: #F5E9DD;
+}
+
+h3 {
+    margin-top: 0;
+}
+
+#newPost__submit {
+    background-color: #F5939C;
+}
+
+#mood-select {
+    background-color: #A4A4C4;
 }
