@@ -1,9 +1,9 @@
 export const PostEntry = () => {
     return `
-    <form action="">
+    <form id="newEntry">
                 <fieldset>
                     <label for="journalDate">Date of entry</label>
-                    <input type="date" name="journalDate" id="journalDate">
+                    <input type="date" name="journalDate" id="journalDate" placeholder="mm-dd-yyyy">
                 </fieldset>
                 <fieldset>
                     <label for="journalConcept">Concepts covered</label>

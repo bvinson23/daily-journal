@@ -1,6 +1,7 @@
 import { EntryList } from "./JournalEntryList.js"
-import { getEntries, createPost } from "./data/Datamanager.js"
+import { getEntries, createPost, useEntryCollection } from "./data/Datamanager.js"
 import { PostEntry } from "./PostEntry.js"
+import { NavBar } from "./NavBar.js"
 
 const showEntryList = () => {
     const entryElement = document.querySelector("#entryLog");
@@ -38,6 +39,10 @@ applicationElement.addEventListener("click", event => {
 
         // be sure to import from the DataManager
         createPost(postObject)
+        .then(response => {
+            showEntryList();
+        })
+        .then(document.getElementById("newEntry").reset())
     }
 })
 
@@ -46,7 +51,13 @@ const showPostEntry = () => {
     entryElement.innerHTML = PostEntry();
 }
 
+const showNavBar = () => {
+    const navElement = document.querySelector("nav");
+    navElement.innerHTML = NavBar();
+}
+
 const startDailyJournal = () => {
+    showNavBar();
     showEntryList();
     showPostEntry();
 
