@@ -15,10 +15,22 @@
         <nav></nav>
         <h3>Journal Entries</h3>
         <div class="flexContainer">
-            <div class="entryForm"></div>
+            <div class="containerChild">
+                <div class="entryForm"></div>
+                <div>Filter by mood<select id="moodSelector">
+                        <option value="">--Please choose an option--</option>
+                        <option value="excited">Excited</option>
+                        <option value="happy">Happy</option>
+                        <option value="fine">Fine</option>
+                        <option value="sad">Sad</option>
+                        <option value="angry">Angry</option>
+                    </select>
+                </div>
+            </div>
             <aside id="entryLog"></aside>
         </div>
-        <footer class="footer">&copy;2021 Brandon Vinson <a href="https://github.com/bvinson23"> github.com/bvinson23</a></footer>
+        <footer class="footer">&copy;2021 Brandon Vinson <a href="https://github.com/bvinson23">
+                github.com/bvinson23</a></footer>
     </main>
 
 
