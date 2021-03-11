@@ -33,6 +33,7 @@ const showFilteredPosts = (mood) => {
 applicationElement.addEventListener("change", event => {
     if (event.target.id === "moodSelector") {
         const moodSelection = event.target.id
+        console.log("user wants to see entries by ")
         showFilteredPosts(moodSelection);
     }
 })
