@@ -20,23 +20,22 @@ applicationElement.addEventListener("click", event => {
     }
 })
 
-const showFilteredPosts = (mood) => {
+applicationElement.addEventListener("change", event => {
+    if (event.target.id === "moodSelector") {
+        const moodSelection = (event.target.value)
+        showFilteredMoodPosts(moodSelection);
+    }
+})
+
+const showFilteredMoodPosts = (moodValue) => {
     const filteredData = useEntryCollection().filter(singlePost => {
-        if (singlePost.mood = mood) {
+        if (singlePost.mood === moodValue) {
             return singlePost
         }
     })
     const entryElement = document.querySelector(".entryList");
     entryElement.innerHTML = EntryList(filteredData);
 }
-
-applicationElement.addEventListener("change", event => {
-    if (event.target.id === "moodSelector") {
-        const moodSelection = event.target.id
-        console.log("user wants to see entries by ")
-        showFilteredPosts(moodSelection);
-    }
-})
 
 applicationElement.addEventListener("click", event => {
     if (event.target.id === "newPost__submit") {
