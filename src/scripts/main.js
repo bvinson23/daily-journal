@@ -1,5 +1,5 @@
 import { EntryList } from "./JournalEntryList.js"
-import { getEntries, createPost, useEntryCollection } from "./data/Datamanager.js"
+import { getEntries, createPost, useEntryCollection, deletePost } from "./data/Datamanager.js"
 import { PostEntry } from "./PostEntry.js"
 import { NavBar } from "./NavBar.js"
 
@@ -36,6 +36,17 @@ const showFilteredMoodPosts = (moodValue) => {
     const entryElement = document.querySelector(".entryList");
     entryElement.innerHTML = EntryList(filteredData);
 }
+
+applicationElement.addEventListener("click", event => {
+    event.preventDefault();
+    if (event.target.id.startsWith("delete")) {
+      const postId = event.target.id.split("__")[1];
+      deletePost(postId)
+        .then(response => {
+          showEntryList();
+        })
+    }
+  })
 
 applicationElement.addEventListener("click", event => {
     if (event.target.id === "newPost__submit") {

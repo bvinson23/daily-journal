@@ -8,6 +8,7 @@ export const JournalEntry = (entry) => {
             <p>${entry.entry}</p>
             <p>${entry.date}</p>
             <p>Mood: ${entry.mood}</p>
+            <button id="delete__${entry.id}">Delete</button>
         </section>
     `
 }
