@@ -1,6 +1,6 @@
 export const PostEntry = () => {
     return `
-    <form id="newEntry">
+    <form class="newEntry">
                 <fieldset>
                     <label for="journalDate">Date of entry</label>
                     <input type="date" name="journalDate" id="journalDate" placeholder="mm-dd-yyyy">
@@ -17,11 +17,11 @@ export const PostEntry = () => {
                     <label for="moodDropdown">Mood for the day</label>
                     <select name="moods" id="mood-select">
                         <option value="">--Please choose an option--</option>
-                        <option value="excited">Excited</option>
-                        <option value="happy">Happy</option>
-                        <option value="fine">Fine</option>
-                        <option value="sad">Sad</option>
-                        <option value="angry">Angry</option>
+                        <option value="Excited">Excited</option>
+                        <option value="Happy">Happy</option>
+                        <option value="Fine">Fine</option>
+                        <option value="Sad">Sad</option>
+                        <option value="Angry">Angry</option>
                     </select>
                 </fieldset>
                 <button id="newPost__submit">Record Journal Entry</button>

@@ -23,18 +23,19 @@ applicationElement.addEventListener("click", event => {
 applicationElement.addEventListener("change", event => {
     if (event.target.id === "moodSelector") {
         const moodSelection = (event.target.value)
-        showFilteredMoodPosts(moodSelection);
+        console.log(`user wants to filter posts by mood: ${moodSelection}`)
+        showFilteredEntries(moodSelection);
     }
 })
 
-const showFilteredMoodPosts = (moodValue) => {
+const showFilteredEntries = (mood) => {
     const filteredData = useEntryCollection().filter(singlePost => {
-        if (singlePost.mood === moodValue) {
+        if (singlePost.mood === mood) {
             return singlePost
         }
     })
-    const entryElement = document.querySelector(".entryList");
-    entryElement.innerHTML = EntryList(filteredData);
+    const entryElement = document.querySelector(".journalEntry");
+    entryElement.innerHTML = EntryList(filteredData)
 }
 
 applicationElement.addEventListener("click", event => {
@@ -56,7 +57,6 @@ applicationElement.addEventListener("click", event => {
         const concept = document.querySelector("input[name='concept']").value
         const entry = document.querySelector("textarea[name='journalEntry']").value
         const mood = document.querySelector("select[name='moods']").value
-        //we have not created a user yet - for now, we will hard code `1`.
         //we can add the current time as well
         const postObject = {
             date: date,
@@ -70,7 +70,7 @@ applicationElement.addEventListener("click", event => {
         .then(response => {
             showEntryList();
         })
-        .then(document.getElementById("newEntry").reset())
+        .then(document.getElementsByClassName("newEntry").reset())
     }
 })
 
