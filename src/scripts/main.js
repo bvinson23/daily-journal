@@ -20,6 +20,23 @@ applicationElement.addEventListener("click", event => {
     }
 })
 
+applicationElement.addEventListener("change", event => {
+    if (event.target.id === "moodSelector") {
+        const moodSelection = (event.target.value)
+        showFilteredMoodPosts(moodSelection);
+    }
+})
+
+const showFilteredMoodPosts = (moodValue) => {
+    const filteredData = useEntryCollection().filter(singlePost => {
+        if (singlePost.mood === moodValue) {
+            return singlePost
+        }
+    })
+    const entryElement = document.querySelector(".entryList");
+    entryElement.innerHTML = EntryList(filteredData);
+}
+
 applicationElement.addEventListener("click", event => {
     if (event.target.id === "newPost__submit") {
         event.preventDefault();

@@ -41,6 +41,13 @@
       "entry": "I finally got the form to add posts to my database, add to the DOM, and actually clear the form!!",
       "mood": "happy",
       "id": 6
+    },
+    {
+      "date": "2021-03-11",
+      "concept": "Did it break?",
+      "entry": "Checking to see if I broke my site by accident.",
+      "mood": "fine",
+      "id": 7
     }
   ]
 }
