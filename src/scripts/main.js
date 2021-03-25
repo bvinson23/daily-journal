@@ -69,15 +69,15 @@ applicationElement.addEventListener("change", event => {
 applicationElement.addEventListener("click", event => {
     event.preventDefault();
     if (event.target.id.startsWith("delete")) {
-      const postId = event.target.id.split("__")[1];
-      deletePost(postId)
-        .then(response => {
-          showEntryList();
-        })
+        const postId = event.target.id.split("__")[1];
+        deletePost(postId)
+            .then(response => {
+                showEntryList();
+            })
     }
-  })
+})
 
-  //event listener to create a new post
+//event listener to create a new post
 applicationElement.addEventListener("click", event => {
     if (event.target.id === "newPost__submit") {
         event.preventDefault();
@@ -97,9 +97,9 @@ applicationElement.addEventListener("click", event => {
 
         // be sure to import from the DataManager
         createPost(postObject)
-        .then(response => {
-            showEntryList();
-        })
-        .then(document.getElementById("newEntry").reset())
+            .then(response => {
+                showEntryList();
+            })
+            .then(document.getElementById("newEntry").reset())
     }
 })
