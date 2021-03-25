@@ -1,7 +1,8 @@
 import { EntryList } from "./JournalEntryList.js"
-import { getEntries, createPost, useEntryCollection, deletePost } from "./data/Datamanager.js"
+import { getEntries, createPost, useEntryCollection, deletePost, getSinglePost } from "./data/Datamanager.js"
 import { PostEntry } from "./PostEntry.js"
 import { NavBar } from "./NavBar.js"
+import { PostEdit } from "./PostEdit.js"
 
 const showEntryList = () => {
     const entryElement = document.querySelector("#entryLog");
@@ -45,6 +46,22 @@ applicationElement.addEventListener("click", event => {
       deletePost(postId)
         .then(response => {
           showEntryList();
+        })
+    }
+  })
+
+  const showEdit = (postObj) => {
+      const entryElement = document.querySelector(".entryForm");
+      entryElement.innerHTML = PostEdit(postObj)
+  }
+
+  applicationElement.addEventListener("click", event => {
+    event.preventDefault();
+    if (event.target.id.startsWith("edit")) {
+      const postId = event.target.id.split("__")[1];
+      getSinglePost(postId)
+        .then(response => {
+          showEdit(response);
         })
     }
   })

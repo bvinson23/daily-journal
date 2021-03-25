@@ -25,6 +25,23 @@ export const createPost = postObj => {
         .then(response => response.json())
   }
 
+  export const getSinglePost = (postId) => {
+      return fetch(`http://localhost:8088/posts/${postId}`)
+      .then(response => response.json())
+  }
+
+  export const updatePost = postObj => {
+      return fetch(`http://localhost:8088/posts/${postObj.id}`, {
+          method: "PUT",
+          headers: {
+              "Content-Type": "application/json"
+          },
+          body: JSON.stringify(postObj)
+      })
+      .then(response => response.json())
+      .then(getEntries())
+  }
+
   export const deletePost = postId => {
     return fetch(`http://localhost:8088/posts/${postId}`, {
         method: "DELETE",
