@@ -1,8 +1,28 @@
+//------------IMPORTS------------//
+
 import { EntryList } from "./JournalEntryList.js"
 import { getEntries, createPost, useEntryCollection, deletePost } from "./data/Datamanager.js"
 import { PostEntry } from "./PostEntry.js"
 import { NavBar } from "./NavBar.js"
 
+//global variable to put elements on the DOM
+const applicationElement = document.querySelector(".dailyjournal");
+
+//------------FUNCTIONS TO START THE SITE------------//
+
+//function to show the navbar
+const showNavBar = () => {
+    const navElement = document.querySelector("nav");
+    navElement.innerHTML = NavBar();
+}
+
+//function to show the entry form
+const showPostEntry = () => {
+    const entryElement = document.querySelector(".entryForm");
+    entryElement.innerHTML = PostEntry();
+}
+
+//function to show saved journal entries from newest to oldest
 const showEntryList = () => {
     const entryElement = document.querySelector("#entryLog");
     getEntries().then((allEntries) => {
@@ -11,15 +31,33 @@ const showEntryList = () => {
 }
 
 
-const applicationElement = document.querySelector(".dailyjournal");
+//function to start the site
+const startDailyJournal = () => {
+    showNavBar();
+    showEntryList();
+    showPostEntry();
+}
 
-applicationElement.addEventListener("click", event => {
-    if (event.target.id.startsWith("entry")) {
-        console.log("post clicked", event.target.id.split("--"))
-        console.log("the id is", event.target.id.split("--")[1])
-    }
-})
+//function call to start the site
+startDailyJournal();
 
+//------------OTHER FUNCTIONS------------//
+
+//function to show filtered posts by mood
+// ***no functionality yet***
+const showFilteredMoodPosts = (moodValue) => {
+    const filteredData = useEntryCollection().filter(singlePost => {
+        if (singlePost.mood == moodValue) {
+            return singlePost
+        }
+    })
+    const entryElement = document.querySelector("#entryLog");
+    entryElement.innerHTML = EntryList(filteredData);
+}
+
+//------------EVENT LISTENERS------------//
+
+//event listener to filter by mood
 applicationElement.addEventListener("change", event => {
     if (event.target.id === "moodSelector") {
         const moodSelection = (event.target.value)
@@ -27,27 +65,19 @@ applicationElement.addEventListener("change", event => {
     }
 })
 
-const showFilteredMoodPosts = (moodValue) => {
-    const filteredData = useEntryCollection().filter(singlePost => {
-        if (singlePost.mood === moodValue) {
-            return singlePost
-        }
-    })
-    const entryElement = document.querySelector(".entryList");
-    entryElement.innerHTML = EntryList(filteredData);
-}
-
+//event listener to delete a post when clicking delete
 applicationElement.addEventListener("click", event => {
     event.preventDefault();
     if (event.target.id.startsWith("delete")) {
-      const postId = event.target.id.split("__")[1];
-      deletePost(postId)
-        .then(response => {
-          showEntryList();
-        })
+        const postId = event.target.id.split("__")[1];
+        deletePost(postId)
+            .then(response => {
+                showEntryList();
+            })
     }
-  })
+})
 
+//event listener to create a new post
 applicationElement.addEventListener("click", event => {
     if (event.target.id === "newPost__submit") {
         event.preventDefault();
@@ -67,28 +97,9 @@ applicationElement.addEventListener("click", event => {
 
         // be sure to import from the DataManager
         createPost(postObject)
-        .then(response => {
-            showEntryList();
-        })
-        .then(document.getElementById("newEntry").reset())
+            .then(response => {
+                showEntryList();
+            })
+            .then(document.getElementById("newEntry").reset())
     }
 })
-
-const showPostEntry = () => {
-    const entryElement = document.querySelector(".entryForm");
-    entryElement.innerHTML = PostEntry();
-}
-
-const showNavBar = () => {
-    const navElement = document.querySelector("nav");
-    navElement.innerHTML = NavBar();
-}
-
-const startDailyJournal = () => {
-    showNavBar();
-    showEntryList();
-    showPostEntry();
-
-}
-
-startDailyJournal();

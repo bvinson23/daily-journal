@@ -41,6 +41,13 @@
       "entry": "I finally got the form to add posts to my database, add to the DOM, and actually clear the form!!",
       "mood": "happy",
       "id": 6
+    },
+    {
+      "date": "2021-03-26",
+      "concept": "Adding a like button",
+      "entry": "We added a like button to our giffygram project.",
+      "mood": "excited",
+      "id": 7
     }
   ]
 }
