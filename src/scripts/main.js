@@ -100,6 +100,6 @@ applicationElement.addEventListener("click", event => {
             .then(response => {
                 showEntryList();
             })
-            .then(document.getElementById("newEntry").reset())
+            .then(document.querySelector(".newEntry").reset())
     }
 })

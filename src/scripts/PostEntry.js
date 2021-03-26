@@ -20,6 +20,7 @@ export const PostEntry = () => {
                         <option value="Excited">Excited</option>
                         <option value="Happy">Happy</option>
                         <option value="Fine">Fine</option>
+                        <option value="Ok">Ok</option>
                         <option value="Sad">Sad</option>
                         <option value="Angry">Angry</option>
                     </select>
