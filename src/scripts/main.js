@@ -47,11 +47,11 @@ startDailyJournal();
 // ***no functionality yet***
 const showFilteredMoodPosts = (moodValue) => {
     const filteredData = useEntryCollection().filter(singlePost => {
-        if (singlePost.mood === moodValue) {
+        if (singlePost.mood == moodValue) {
             return singlePost
         }
     })
-    const entryElement = document.querySelector(".entryList");
+    const entryElement = document.querySelector("#entryLog");
     entryElement.innerHTML = EntryList(filteredData);
 }
 
