@@ -46,7 +46,6 @@ export const createPost = postObj => {
       .then(getEntries())
   }
 
-  export const deletePost = postId => {
 //fetch call to delete a post
 export const deletePost = postId => {
     return fetch(`http://localhost:8088/posts/${postId}`, {

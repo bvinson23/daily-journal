@@ -27,8 +27,6 @@
       "entry": "We discussed what a json server was and how to build one to act as a faux server for your data as you develop a site or app.",
       "mood": "Happy",
       "id": 4
-<<<<<<< HEAD
-=======
     },
     {
       "date": "2021-03-11",
@@ -50,7 +48,6 @@
       "entry": "We added a like button to our giffygram project.",
       "mood": "excited",
       "id": 7
->>>>>>> main
     }
   ]
 }
