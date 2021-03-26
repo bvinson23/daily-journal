@@ -6,7 +6,7 @@ import { PostEntry } from "./PostEntry.js"
 import { NavBar } from "./NavBar.js"
 import { PostEdit } from "./PostEdit.js"
 
-//global variable to put elements on the DOM
+//global variable for event listeners
 const applicationElement = document.querySelector(".dailyjournal");
 
 //------------FUNCTIONS TO START THE SITE------------//
@@ -63,26 +63,6 @@ const showEdit = (postObj) => {
 
 //------------EVENT LISTENERS------------//
 
-//event listener to filter by mood
-applicationElement.addEventListener("change", event => {
-    if (event.target.id === "moodSelector") {
-        const moodSelection = (event.target.value)
-        showFilteredMoodPosts(moodSelection);
-    }
-})
-
-//event listener to delete a post when clicking delete
-applicationElement.addEventListener("click", event => {
-    event.preventDefault();
-    if (event.target.id.startsWith("delete")) {
-        const postId = event.target.id.split("__")[1];
-        deletePost(postId)
-            .then(response => {
-                showEntryList();
-            })
-    }
-})
-
 //event listener to create a new post
 applicationElement.addEventListener("click", event => {
     if (event.target.id === "newPost__submit") {
@@ -99,12 +79,54 @@ applicationElement.addEventListener("click", event => {
             entry: entry,
             mood: mood
         }
-
         // be sure to import from the DataManager
         createPost(postObject)
-            .then(response => {
-                showEntryList();
-            })
-            .then(document.querySelector(".newEntry").reset())
+        .then(response => {
+            showEntryList();
+        })
+        .then(document.querySelector(".newEntry").reset())
+    }
+})
+
+//event listener to delete a post when clicking delete
+applicationElement.addEventListener("click", event => {
+    event.preventDefault();
+    if (event.target.id.startsWith("delete")) {
+        const postId = event.target.id.split("__")[1];
+        deletePost(postId)
+        .then(response => {
+            showEntryList();
+        })
+    }
+})
+
+//event listener for editing a post
+applicationElement.addEventListener("click", event => {
+    event.preventDefault();
+    if (event.target.id.startsWith("edit")) {
+        const postId = event.target.id.split("__")[1];
+        getSinglePost(postId)
+        .then(response => {
+            showEdit(response);
+        })
+    }
+})
+
+//event listener for updating a post
+applicationElement.addEventListener("click", event => {
+    event.preventDefault();
+    if (event.target.id.startsWith("updatePost")) {
+        const postId = event.target.id.split("__")[1];
+        const date = document.querySelector("input[name='journalDate']").value
+        const concept = document.querySelector("input[name='concept']").value
+        const entry = document.querySelector("input[name='journalEntry']").value
+    }
+})
+
+//event listener to filter by mood
+applicationElement.addEventListener("change", event => {
+    if (event.target.id === "moodSelector") {
+        const moodSelection = (event.target.value)
+        showFilteredMoodPosts(moodSelection);
     }
 })
