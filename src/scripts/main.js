@@ -45,7 +45,6 @@ startDailyJournal();
 //------------OTHER FUNCTIONS------------//
 
 //function to show filtered posts by mood
-// ***no functionality yet***
 const showFilteredMoodPosts = (moodValue) => {
     const filteredData = useEntryCollection().filter(singlePost => {
         if (singlePost.mood == moodValue) {
@@ -54,6 +53,12 @@ const showFilteredMoodPosts = (moodValue) => {
     })
     const entryElement = document.querySelector("#entryLog");
     entryElement.innerHTML = EntryList(filteredData);
+}
+
+//function to show the edit form
+const showEdit = (postObj) => {
+    const entryElement = document.querySelector(".entryForm");
+    entryElement.innerHTML = PostEdit(postObj);
 }
 
 //------------EVENT LISTENERS------------//
